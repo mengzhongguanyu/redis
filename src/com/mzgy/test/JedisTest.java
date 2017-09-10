@@ -11,13 +11,7 @@ import java.util.Set;
 public class JedisTest {
     public static void main(String[] args){
         Jedis jedis = JedisConnet.getJedis();
-        Set<String> set = jedis.keys("*");
-        for (String str: set) {
-            System.out.println(str);
-        }
-        Set<String> strings = jedis.smembers("set:user:1");
-        strings.forEach(s -> {
-            System.out.println(s);
-        });
+        String str = jedis.set("string:user:1","java");
+        System.out.println(str);
     }
 }
