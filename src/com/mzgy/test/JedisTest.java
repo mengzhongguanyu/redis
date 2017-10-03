@@ -1,6 +1,7 @@
 package com.mzgy.test;
 
 import com.mzgy.jedis.JedisConnet;
+import com.mzgy.jedis.RedisPool;
 import redis.clients.jedis.Jedis;
 
 import java.util.Set;
@@ -10,8 +11,8 @@ import java.util.Set;
  */
 public class JedisTest {
     public static void main(String[] args){
-        Jedis jedis = JedisConnet.getJedis();
-        String str = jedis.set("string:user:1","java");
-        System.out.println(str);
+        Jedis jedis = RedisPool.getRedisPool();
+        String result = jedis.get("string:user:1");
+        System.out.println(result);
     }
 }
