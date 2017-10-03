@@ -9,7 +9,7 @@ import redis.clients.jedis.JedisPool;
 public class RedisPool {
     public static Jedis getRedisPool(){
         Jedis jedis = null;
-        JedisPool jedisPool = new JedisPool("127.0.0.1",6379);
+        JedisPool jedisPool = new JedisPool("192.168.83.131",6379);
         try{
             jedis = jedisPool.getResource();
         } catch (Exception e){

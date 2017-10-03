@@ -14,7 +14,7 @@ import java.util.Set;
 public class SetTest {
     public static void main(String[] args) {
         Jedis jedis = JedisConnet.getJedis();
-        jedis.sadd("set:user:1","a","b","c");
+        jedis.sadd("set:user:1","b","c");
 
         Long start = System.currentTimeMillis();
         Set<String> resultSet = jedis.smembers("set:user:1");
